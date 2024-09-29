@@ -1,0 +1,2 @@
+module Blog::NewsHelper
+end

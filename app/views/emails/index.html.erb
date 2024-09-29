@@ -1,0 +1,24 @@
+<div class="form-container">
+  <%= form_tag(emails_path, method: :post, class: "email-form") do %>
+    <h2 class="form-title">Subscribe to Our Newsletter</h2>
+    
+    <div class="form-group">
+      <%= label_tag(:first_name, "First Name", class: "form-label") %>
+      <%= text_field_tag(:first_name, nil, class: "form-input") %>
+    </div>
+    
+    <div class="form-group">
+      <%= label_tag(:last_name, "Last Name", class: "form-label") %>
+      <%= text_field_tag(:last_name, nil, class: "form-input") %>
+    </div>
+    
+    <div class="form-group">
+      <%= label_tag(:email, "Email Address", class: "form-label") %>
+      <%= email_field_tag(:email, nil, class: "form-input") %>
+    </div>
+    
+    <div class="form-group">
+      <%= submit_tag "Subscribe", class: "form-submit" %>
+    </div>
+  <% end %>
+</div>

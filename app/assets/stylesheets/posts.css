@@ -1,0 +1,46 @@
+.posts-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-summary {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.post-summary h2 {
+  margin-bottom: 0.5em;
+}
+
+.post-summary h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.post-summary h2 a:hover {
+  color: #0066cc;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.post-meta span {
+  margin-right: 1em;
+}
+
+.excerpt {
+  margin-bottom: 1em;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.2em 0.5em;
+  margin-right: 0.5em;
+  border-radius: 3px;
+  font-size: 0.8em;
+}

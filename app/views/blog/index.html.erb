@@ -1,0 +1,25 @@
+<h1>Latest Blog Posts</h1>
+
+<section class="recent-news">
+  <h2>Recent News</h2>
+  <ul>
+    <% @recent_news.each do |post| %>
+      <li>
+        <%= link_to post.title, blog_news_post_path(post.slug) %>
+        <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="recent-reviews">
+  <h2>Recent Reviews</h2>
+  <ul>
+    <% @recent_reviews.each do |post| %>
+      <li>
+        <%= link_to post.title, blog_review_post_path(post.slug) %>
+        <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
+      </li>
+    <% end %>
+  </ul>
+</section>

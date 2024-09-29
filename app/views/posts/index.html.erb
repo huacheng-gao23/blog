@@ -1,0 +1,29 @@
+<h1><%= @category.capitalize %> Posts</h1>
+
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <article class="post-summary">
+      <h2><%= link_to post.title, @category == 'news' ? blog_news_post_path(post) : blog_review_post_path(post) %></h2>
+      <div class="post-meta">
+        <span class="author">By <%= post.author %></span>
+        <span class="date">Published on <%= post.published_at.strftime('%B %d, %Y') %></span>
+        <span class="reading-time"><%= post.reading_time %> min read</span>
+      </div>
+      <p class="excerpt"><%= truncate(post.content, length: 150, separator: ' ') %></p>
+      <div class="post-tags">
+        <% post.tag_list.each do |tag| %>
+          <span class="tag"><%= tag %></span>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
+</div>
+
+<% if @posts.empty? %>
+  <p>No posts found in this category.</p>
+<% end %>
+
+<% content_for :head do %>
+  <title><%= @category.capitalize %> Posts | Your Blog Name</title>
+  <meta name="description" content="Latest <%= @category %> posts from Your Blog Name">
+<% end %>

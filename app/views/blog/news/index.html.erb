@@ -1,0 +1,6 @@
+<h1>Latest News</h1>
+
+<% @news_items.each do |news_item| %>
+  <h2><%= link_to news_item.title, blog_news_path(news_item) %></h2>
+  <p>Published: <%= news_item.published_at.strftime("%B %d, %Y") %></p>
+<% end %>

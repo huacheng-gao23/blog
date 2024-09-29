@@ -1,0 +1,30 @@
+<article class="post">
+  <h1><%= @post.title %></h1>
+  
+  <div class="post-meta">
+    <span class="author">By <%= @post.author %></span>
+    <span class="date">Published on <%= @post.published_at.strftime('%B %d, %Y') %></span>
+    <span class="reading-time"><%= @post.reading_time %> min read</span>
+  </div>
+
+  <% if @post.featured_image.present? %>
+    <img src="<%= @post.featured_image %>" alt="<%= @post.title %>" class="featured-image">
+  <% end %>
+
+  <div class="post-content">
+    <%= simple_format(@post.content) %>
+  </div>
+
+  <div class="post-tags">
+    <% if @post.tag_list.present? %>
+      <% @post.tag_list.each do |tag| %>
+        <span class="tag"><%= tag %></span>
+      <% end %>
+    <% end %>
+  </div>
+</article>
+
+<% content_for :head do %>
+  <title><%= @post.title %> | Your Blog Name</title>
+  <meta name="description" content="<%= @post.meta_description %>">
+<% end %>
