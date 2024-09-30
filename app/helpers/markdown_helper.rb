@@ -1,12 +1,12 @@
 # app/helpers/markdown_helper.rb
 module MarkdownHelper
   def markdown(text)
-    return '' if text.blank?
+    return "" if text.blank?
 
     options = {
       filter_html:     true,
       hard_wrap:       true,
-      link_attributes: { rel: 'nofollow', target: "_blank" },
+      link_attributes: { rel: "nofollow", target: "_blank" },
       space_after_headers: true,
       fenced_code_blocks: true
     }

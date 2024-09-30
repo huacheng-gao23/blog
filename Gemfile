@@ -18,12 +18,12 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Libraries
-gem 'friendly_id', '~> 5.4.0'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'dotenv-rails'
-gem 'omniauth-rails_csrf_protection'
-gem 'redcarpet'
+gem "friendly_id", "~> 5.4.0"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "dotenv-rails"
+gem "omniauth-rails_csrf_protection"
+gem "redcarpet"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

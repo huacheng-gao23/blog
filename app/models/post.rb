@@ -8,22 +8,22 @@ class Post < ApplicationRecord
 
   before_save :calculate_reading_time
 
-  scope :published, -> { where('published_at <= ?', Time.current) }
-  scope :news, -> { where(category: 'news') }
-  scope :reviews, -> { where(category: 'review') }
+  scope :published, -> { where("published_at <= ?", Time.current) }
+  scope :news, -> { where(category: "news") }
+  scope :reviews, -> { where(category: "review") }
 
   def tag_list
-    tags.split(',').map(&:strip) if tags.present?
+    tags.split(",").map(&:strip) if tags.present?
   end
 
   def tag_list=(tags_string)
-    self.tags = tags_string.split(',').map(&:strip).join(',')
+    self.tags = tags_string.split(",").map(&:strip).join(",")
   end
 
   def content
     markdown_content
   end
-  
+
   def content=(text)
     self.markdown_content = text
   end

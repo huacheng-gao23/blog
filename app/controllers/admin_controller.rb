@@ -11,7 +11,7 @@ class AdminController < ApplicationController
   def update_post
     @post = Post.friendly.find(params[:id])
     if @post.update(post_params)
-      redirect_to admin_dashboard_path, notice: 'Post was successfully updated.'
+      redirect_to admin_dashboard_path, notice: "Post was successfully updated."
     else
       flash.now[:alert] = "Error updating post: #{@post.errors.full_messages.join(', ')}"
       render :dashboard

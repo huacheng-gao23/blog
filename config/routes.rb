@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
   get "sessions/create"
-  get '/admin', to: 'admin#index'
-  get '/admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
-  patch '/admin/posts/:id', to: 'admin#update_post', as: :admin_update_post
+  get "/admin", to: "admin#index"
+  get "/admin/dashboard", to: "admin#dashboard", as: :admin_dashboard
+  patch "/admin/posts/:id", to: "admin#update_post", as: :admin_update_post
 
   # Omniauth
-  get '/auth/:provider/callback', to: 'sessions#create'
-  post '/auth/:provider/callback', to: 'sessions#create'
+  get "/auth/:provider/callback", to: "sessions#create"
+  post "/auth/:provider/callback", to: "sessions#create"
 
   # Root route
   root to: "blog#index"
 
   # Blog routes
-  get 'blog', to: 'blog#index'
-  
-  scope 'blog' do
-    get 'news', to: 'posts#index', defaults: { category: 'news' }, as: :blog_news
-    get 'news/:slug', to: 'posts#show', defaults: { category: 'news' }, as: :blog_news_post
-    get 'reviews', to: 'posts#index', defaults: { category: 'review' }, as: :blog_reviews
-    get 'reviews/:slug', to: 'posts#show', defaults: { category: 'review' }, as: :blog_review_post
+  get "blog", to: "blog#index"
+
+  scope "blog" do
+    get "news", to: "posts#index", defaults: { category: "news" }, as: :blog_news
+    get "news/:slug", to: "posts#show", defaults: { category: "news" }, as: :blog_news_post
+    get "reviews", to: "posts#index", defaults: { category: "review" }, as: :blog_reviews
+    get "reviews/:slug", to: "posts#show", defaults: { category: "review" }, as: :blog_review_post
   end
 
   # Existing routes
