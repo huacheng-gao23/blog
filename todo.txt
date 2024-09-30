@@ -7,6 +7,7 @@ Done
 - create new post form on /admin/new_post
 
 TODO
+- render images
 - CSS
 - Seed data
 - Research SEO and make sure the posts html template has these

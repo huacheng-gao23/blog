@@ -1,16 +1,77 @@
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post-content {
+  text-align: left; /* Changed to left alignment */
+}
+
+.post-title {
+  font-size: 2.5em; /* Increased font size */
+  line-height: 1.2; /* Adjusted line height for better readability */
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-weight: bold; /* Added bold weight for emphasis */
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
+  text-align: left; /* Explicitly set to left alignment */
+}
+
+.post-meta span {
+  margin-right: 1em;
+}
+
+.featured-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  display: block; /* Center the image */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-body {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.post-tags {
+  margin-top: 1em;
+  text-align: left; /* Explicitly set to left alignment */
+}
+
+.post-tags .tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.2em 0.5em;
+  margin-right: 0.5em;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+/* Styles for the posts list page */
 .posts-container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .post-summary {
   margin-bottom: 2em;
   padding-bottom: 1em;
   border-bottom: 1px solid #eee;
+  text-align: left; /* Changed to left alignment */
 }
 
 .post-summary h2 {
   margin-bottom: 0.5em;
+  text-align: center; /* Keep the title centered */
 }
 
 .post-summary h2 a {
@@ -22,25 +83,7 @@
   color: #0066cc;
 }
 
-.post-meta {
-  font-size: 0.9em;
-  color: #666;
-  margin-bottom: 1em;
-}
-
-.post-meta span {
-  margin-right: 1em;
-}
-
 .excerpt {
   margin-bottom: 1em;
-}
-
-.post-tags .tag {
-  display: inline-block;
-  background: #f0f0f0;
-  padding: 0.2em 0.5em;
-  margin-right: 0.5em;
-  border-radius: 3px;
-  font-size: 0.8em;
+  text-align: left;
 }
