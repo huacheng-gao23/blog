@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  # before_action :authenticate_admin, only: [:dashboard, :update_post]
+  # before_action :authenticate_admin, only: [:dashboard, :update_post, :new_post, :create_post]
 
   def index
   end
@@ -21,6 +21,24 @@ class AdminController < ApplicationController
     flash.now[:alert] = "An unexpected error occurred while updating the post."
     @post = Post.order(created_at: :desc).first  # Reload the latest post
     render :dashboard
+  end
+
+  def new_post
+    @post = Post.new
+  end
+
+  def create_post
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to admin_dashboard_path, notice: "Post was successfully created."
+    else
+      flash.now[:alert] = "Error creating post: #{@post.errors.full_messages.join(', ')}"
+      render :new_post
+    end
+  rescue => e
+    Rails.logger.error "Error creating post: #{e.message}"
+    flash.now[:alert] = "An unexpected error occurred while creating the post."
+    render :new_post
   end
 
   private

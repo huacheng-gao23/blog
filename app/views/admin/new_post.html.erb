@@ -1,0 +1,67 @@
+<!-- app/views/admin/new_post.html.erb -->
+
+<h1>Create New Post</h1>
+
+<%= form_with(model: @post, url: admin_create_post_path, local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_at %>
+    <%= form.datetime_field :published_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta_description %>
+    <%= form.text_area :meta_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :featured_image %>
+    <%= form.text_field :featured_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reading_time %>
+    <%= form.number_field :reading_time, step: 1 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Post" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Dashboard", admin_dashboard_path %>

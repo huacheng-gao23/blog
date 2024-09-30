@@ -4,11 +4,11 @@ Done
 - /admin has google oauth2.0 
 - can edit posts @ /admin/dashboard
 - posts render as markdown
+- create new post form on /admin/new_post
 
 TODO
 - CSS
 - Seed data
 - Research SEO and make sure the posts html template has these
 - List all posts on /admin/dashboard
-- create new post form on /admin/dashboard
 - reenable oauth 2.0 (its commented out rn in AdminController)
