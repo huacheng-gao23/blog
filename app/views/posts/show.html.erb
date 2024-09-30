@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="post-content">
-    <%= simple_format(@post.content) %>
+    <%= markdown(@post.content) %>
   </div>
 
   <div class="post-tags">

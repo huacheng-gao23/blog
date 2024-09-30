@@ -20,6 +20,14 @@ class Post < ApplicationRecord
     self.tags = tags_string.split(',').map(&:strip).join(',')
   end
 
+  def content
+    markdown_content
+  end
+  
+  def content=(text)
+    self.markdown_content = text
+  end
+
   private
 
   def calculate_reading_time
