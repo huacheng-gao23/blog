@@ -110,7 +110,7 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
-    friendly_id (5.4.2)
+    friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -360,7 +360,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
-  friendly_id (~> 5.4.0)
+  friendly_id (~> 5.5.1)
   importmap-rails
   jbuilder
   omniauth
