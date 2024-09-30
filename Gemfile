@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Libraries
-gem "friendly_id", "~> 5.4.0"
+gem "friendly_id", "~> 5.5.1"
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "dotenv-rails"
