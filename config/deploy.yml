@@ -1,13 +1,18 @@
-service: test-blog-v1
-image: huacheng23/test-blog-v1
+service: my-app
+image: huacheng23/my-app
+
 servers:
-  - 5.161.121.234
+  web:
+    - 5.161.121.234
+
 registry:
   username: huacheng23
   password:
     - KAMAL_REGISTRY_PASSWORD
+
 builder:
   arch: amd64
+
 env:
   secret:
     - RAILS_MASTER_KEY
