@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   get "/admin", to: "admin#index"
   get "/admin/dashboard", to: "admin#dashboard", as: :admin_dashboard
   patch "/admin/posts/:id", to: "admin#update_post", as: :admin_update_post
-  get 'admin/new_post', to: 'admin#new_post'
-  post 'admin/create_post', to: 'admin#create_post'
+  get "admin/new_post", to: "admin#new_post"
+  post "admin/create_post", to: "admin#create_post"
 
-  resources :subscriptions, only: [:create]
+  resources :subscriptions, only: [ :create ]
 
 
   # Omniauth

@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
 
     if @subscription.save
       # TODO: Send welcome email (consider using a background job)
-      flash[:success] = 'Thank you for subscribing!'
+      flash[:success] = "Thank you for subscribing!"
       redirect_to root_path # Redirect to the home page or wherever the form is
     else
       flash[:error] = @subscription.errors.full_messages.to_sentence
