@@ -71,7 +71,7 @@
 
 .post-summary h2 {
   margin-bottom: 0.5em;
-  text-align: center; /* Keep the title centered */
+  text-align: left; /* Changed from center to left */
 }
 
 .post-summary h2 a {
