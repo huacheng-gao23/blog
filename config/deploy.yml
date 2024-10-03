@@ -18,9 +18,6 @@ env:
     - RAILS_MASTER_KEY
 
 healthcheck:
+  interval: 3
   path: /up
-  interval: 10s
-  timeout: 5s
-  retries: 5
-
-port: 3000
+  timeout: 3
