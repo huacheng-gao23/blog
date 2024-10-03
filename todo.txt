@@ -8,7 +8,7 @@ Done
 
 TODO
 - render images
-- CSS
+- make the subscribe the newsletter functional
 - Seed data
 - Research SEO and make sure the posts html template has these
 - List all posts on /admin/dashboard

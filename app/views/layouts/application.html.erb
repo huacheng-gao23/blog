@@ -14,8 +14,15 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+  <body class="site">
+    <header>
+      <%= render 'layouts/navbar' %>
+    </header>
+    <main class="site-content">
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

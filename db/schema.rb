@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_30_140220) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_30_190144) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
@@ -65,5 +65,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_30_140220) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "status", default: "pending", null: false
+    t.datetime "subscribed_at", precision: nil
+    t.string "ip_address"
+    t.string "user_agent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_subscriptions_on_email", unique: true
   end
 end

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'admin/new_post', to: 'admin#new_post'
   post 'admin/create_post', to: 'admin#create_post'
 
+  resources :subscriptions, only: [:create]
+
+
   # Omniauth
   get "/auth/:provider/callback", to: "sessions#create"
   post "/auth/:provider/callback", to: "sessions#create"

@@ -1,0 +1,20 @@
+/* app/assets/stylesheets/layout.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height of 100% of the viewport height */
+}
+
+.site-content {
+  flex: 1 0 auto; /* Flex-grow, flex-shrink, flex-basis */
+  width: 100%;
+}
+
+footer {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+}

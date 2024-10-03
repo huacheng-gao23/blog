@@ -1,8 +1,15 @@
-<nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Blog", blog_path %></li>
-    <li><%= link_to "News", blog_news_path %></li>
-    <li><%= link_to "Reviews", blog_reviews_path %></li>
-  </ul>
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-left">
+      <%= link_to "Home", root_path, class: "nav-link home-link" %>
+    </div>
+    <ul class="nav-center">
+      <li class="nav-item"><%= link_to "Blog", blog_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "News", blog_news_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Reviews", blog_reviews_path, class: "nav-link" %></li>
+    </ul>
+    <div class="nav-right">
+      <%= link_to "Profile", root_path, class: "nav-link profile-link" %>
+    </div>
+  </div>
 </nav>

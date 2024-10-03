@@ -1,6 +1,5 @@
-<h1><%= @category.capitalize %> Posts</h1>
-
 <div class="posts-container">
+  <h1><%= @category.capitalize %> Posts</h1>
   <% @posts.each do |post| %>
     <article class="post-summary">
       <h2><%= link_to post.title, @category == 'news' ? blog_news_post_path(post) : blog_review_post_path(post) %></h2>
@@ -18,11 +17,9 @@
     </article>
   <% end %>
 </div>
-
 <% if @posts.empty? %>
   <p>No posts found in this category.</p>
 <% end %>
-
 <% content_for :head do %>
   <title><%= @category.capitalize %> Posts | Your Blog Name</title>
   <meta name="description" content="Latest <%= @category %> posts from Your Blog Name">

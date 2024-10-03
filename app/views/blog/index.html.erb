@@ -1,25 +1,52 @@
-<h1>Latest Blog Posts</h1>
+<div class="hero-container">
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to Our Amazing Product</h1>
+    <p class="hero-description">Discover the power of innovation and simplicity in one place.</p>
+    <div class="cta-section">
+      <h2 class="cta-title">Stay Updated</h2>
+      <p class="cta-description">Sign up for our newsletter to receive the latest updates and exclusive offers.</p>
+      <%= form_with(model: Subscription.new, class: "newsletter-form", local: true) do |f| %>
+        <div class="form-group">
+          <div class="input-button-wrapper">
+            <%= f.email_field :email, placeholder: "Enter your email", required: true, class: "email-input" %>
+            <%= f.submit "Subscribe", class: "submit-button" %>
+          </div>
+        </div>
+        
+        <div class="flash-message-container">
+          <% flash.each do |type, message| %>
+            <div class="flash-message flash-<%= type %>">
+              <%= message %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<section class="recent-news">
-  <h2>Recent News</h2>
-  <ul>
-    <% @recent_news.each do |post| %>
-      <li>
-        <%= link_to post.title, blog_news_post_path(post.slug) %>
-        <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="recent-reviews">
-  <h2>Recent Reviews</h2>
-  <ul>
-    <% @recent_reviews.each do |post| %>
-      <li>
-        <%= link_to post.title, blog_review_post_path(post.slug) %>
-        <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<h1 class="blog-posts-title">Latest Blog Posts</h1>
+<div class="blog-posts-container">
+  <section class="blog-column recent-news">
+    <h2 class="column-title"><%= link_to "Recent News", blog_news_path %></h2>
+    <ul class="post-list">
+      <% @recent_news.each do |post| %>
+        <li class="post-item">
+          <%= link_to post.title, blog_news_post_path(post.slug), class: "post-title" %>
+          <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <section class="blog-column recent-reviews">
+    <h2 class="column-title"><%= link_to "Recent Reviews", blog_reviews_path %></h2>
+    <ul class="post-list">
+      <% @recent_reviews.each do |post| %>
+        <li class="post-item">
+          <%= link_to post.title, blog_review_post_path(post.slug), class: "post-title" %>
+          <span class="post-date"><%= post.published_at.strftime("%B %d, %Y") %></span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</div>
