@@ -5,6 +5,11 @@ servers:
   web:
     - 5.161.121.234
 
+volumes:
+  # host path:container path
+  - "/db:/rails/sqlite"
+  - "/storage:/rails/storage"
+
 registry:
   username: huacheng23
   password:
