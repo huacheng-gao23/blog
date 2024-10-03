@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
+}
+
+.hero-blog-container {
+  margin-bottom: 3rem;
 }
 
 .hero-content {
